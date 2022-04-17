@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-// import the library
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-// import your icons
-import { faMagnifyingGlass, faHighlighter } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function searchcountry({placeholder, data}){
 
@@ -34,7 +30,7 @@ export default function searchcountry({placeholder, data}){
          //https://www.youtube.com/watch?v=x7niho285qs = filter serach
     return(
         <div className="searchcountrycontainer">
-             
+            
              <form>
                  
         <div className="inputelement">

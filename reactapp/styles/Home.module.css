@@ -64,7 +64,7 @@
     }
 
     /*responsive styling for data returned on homepage*/
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 830px) {
 
       .datacontainer{
         height:320px;

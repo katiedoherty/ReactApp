@@ -1,0 +1,64 @@
+.backbutton{
+    color:grey;
+    font-size: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+    
+}
+
+.backbutton:hover{
+    color:#3362B9;
+}
+
+/*diplaying the data returned*/
+
+
+.datacontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D7D7D7;
+}
+
+.datacomponents img{
+      width: 100%;    
+}
+
+.images{
+    width: 50%;
+    padding:20px;
+}
+
+.text{
+    font-size: 30px;
+  padding-left: 30px;
+}
+
+.nameofcountry{
+   text-align: center;
+    font-size: 40px;
+    color:#3362B9;
+    padding-bottom:20px;
+    margin-bottom:5px;
+}
+
+@media screen and (max-width: 830px) {
+    .nameofcountry{
+        font-size: 35px;
+        padding: 10px;
+    }
+
+    .backbutton{
+        font-size: 25px;
+    }
+    .datacontainer{
+        display: block;
+    }
+    .images{
+        width: 100%;
+    }
+    .text{
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+}
