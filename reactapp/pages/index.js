@@ -1,55 +1,42 @@
 
-import styles from '../styles/Home.module.css'
+import styles from'../styles/Home.module.css'
 import { useRouter } from 'next/router';
-import { useState } from 'react';
-
+import dynamic from 'next/dynamic';
 export default function Home({data}) {
 
   const router = useRouter();
-  const [searchcountry, setsearchcountry] = useState("");
-  const [errormessage, seterrormessage] = useState("");
+ 
+  //when user clicks on button to find out more about a country
   const search = (id) =>{
     router.push(`/${id}`)
   }
 
-  const usersearch = (e) =>{
-  
-    e.preventDefault();
-    try {
-      router.push(`/${searchcountry}`)
-    }
-    catch(e) {
-      seterrormessage("There is no Country with that name")
-    }
-    
-    setsearchcountry("");
-  }
+  const Searchbar = dynamic(() => import('./searchcountry'))
   return (
-   <div>
+   <div className={styles.datareturned}>
+
+     <div className="pageheader">
      <h1>Countries App</h1>
-     <form>
-     <label>Search for Country By Name </label>
-         <input
-         type="text"
-         name="search"
-         onChange={(e) => setsearchcountry(e.target.value)}
-         value={searchcountry}
-         />
-         
-     {errormessage}
-   
-   <button onClick={usersearch}>Search</button>
-   </form>
+    <div>
+      <Searchbar placeholder= "Search Country By Name" data = {data}/>
+    </div>
+    </div> 
     {data.map(result =>{
       
       return(
-        <div>
-        <p key={result.name.common}><img src={result.flags.svg} alt=""/> <br />Name: {result.name.common}<br />
-        <br />
-        Population: {result.population}</p>
-      
-        <button onClick={()=>search(result.name.common)}>Read More</button>
-       
+      <div className={styles.datacontainer} key={result.name.common} onClick={()=>search(result.name.common)}>
+        <div className={styles.dataapi}>
+        <img src={result.flags.svg} alt=""/>
+        </div>
+        <div className={styles.dataapi}>
+        <p> <b>Name:</b> {result.name.common}</p>
+        <p>
+        <b>Population:</b> {result.population}<br/>
+        </p>
+        <p>
+        <button className={styles.Readmore} onClick={()=>search(result.name.common)}>Read More</button>
+        </p>
+</div>
          
          </div>
       )

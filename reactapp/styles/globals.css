@@ -2,9 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: arial, sans-serif;
 }
+
+
 
 a {
   color: inherit;
@@ -14,3 +15,86 @@ a {
 * {
   box-sizing: border-box;
 }
+/*styles for header on both pages*/
+h1, form{
+  text-align: center;
+  margin:0; padding:0;
+  padding:15px 0px;
+  
+}
+form{
+  padding-bottom: 40px;
+}
+h1{
+  color:#3362B9;
+  font-weight: bold;
+  font-size:90px;
+}
+.inputelement{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  input{
+    width: 80%;
+    padding: 17px 15px;
+    margin: 0px 0px;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+  }
+
+  input[type="text"]:focus {
+    
+    outline : none;
+}
+
+  .pageheader{
+    background-color: #D7D7D7;
+    
+  }
+  .searchbutton{
+    
+    cursor: pointer;
+    padding:11px 17px;
+    margin-left:15px;
+    text-align: center;
+    background-color: #3362B9;
+    color:white;
+    border-radius: 4px;
+    font-size: 25px;
+    border: 0px;
+    
+  }
+
+  .searchbutton:hover{
+    background-color: #406FC5;
+  }
+
+  
+  img{
+    width:100%;
+ 
+  }
+  
+  /*responsive heading and searchbar*/
+  @media screen and (max-width: 800px) {
+    h1{
+      font-size: 50px;
+    }
+    .searchbutton{
+      padding:5px 6px;
+      font-size: 15px;
+    }
+
+    input{
+      width: 50%;
+      padding: 7px 8px;
+    }
+    
+  }
+  
+ 
+    

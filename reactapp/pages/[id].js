@@ -2,17 +2,21 @@
 import styles from '../styles/Home.module.css'
 import Link from 'next/link';
 
+
 export default function CountryInfo({data}) {
  
 
   return (
    <div>
+     <div className="pageheader">
        <Link href="/">
        <button>Go Back</button>
        </Link>
        
-     <h1>Countries App</h1>
+   
      
+    </div>
+  
     {data.map(result =>{
       
       return(
