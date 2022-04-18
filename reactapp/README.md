@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Project Title
 
-First, run the development server:
+This application is connected to the Rest Countries API (https://restcountries.com/). On the Homepage there is a search component and a list of countries to choose from. The homepage provides you with a brief decription about each country including the countries name, population and an image of their flag. You can search for the country you are looking for in the search bar and you can load more results as you go down the page.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Once you have clicked on a country from the homepage it will bring you to another page which will give you more detailed information about the country you have clicked on.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuring the project
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- To install NextJs run "npm i next" in the terminal.
+- I am using a font awesome icon so you will have to install these packages:
+    -npm i --save @fortawesome/fontawesome-svg-core
+    -npm install --save @fortawesome/free-solid-svg-icons
+    -npm install --save @fortawesome/react-fontawesome
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- To run the project in development then type "npm run dev" in the terminal.
+or
+- run "npm run build" to build the project and then run "npm start"
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The project will run on http://localhost:3000
 
-## Learn More
+## Features
+Homepage
+- Search bar which filters through data returned
+- A list of countries with a summary of information on each one.
+- A load more button to load more results
 
-To learn more about Next.js, take a look at the following resources:
+[id].js page
+- This page returns more detailed information about the clicked on country. Information includes:
+   - Name of country
+   - Population
+   - Currency
+   - Capital
+   - Languages
+   - Bordering countries
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+errorpage: This page is shown when people try to search for a country that deos not exist and brings you back to the homepage. It includes:
+- Information telling the user that the country deos not exist
+- A button that returns them to the homepage.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Code Example
+index.js page: this is the parent page. I put the search bar in a file called search country and the returned data from api in a file called data from api, these components are in a folder called othercomponents. I then called these components on index.js
 
-## Deploy on Vercel
+CSS for index.js: The css for the searchbar is in globals.css and the styling for the rest of the page is in Home.module.css
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[id].js page
+I rendered all the detailed information about that country onto that page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+CSS for [id] page: It is in the folder styles called ReadMore.module.css
+
+errorpage.js
+I rendered all components on this page.
+
+CSS for error page is in the file called error.module.css
+
+
+
+
+
+
