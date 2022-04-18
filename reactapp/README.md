@@ -13,9 +13,9 @@ Once you have clicked on a country from the homepage it will bring you to anothe
     -npm install --save @fortawesome/free-solid-svg-icons
     -npm install --save @fortawesome/react-fontawesome
 
-- To run the project in development then type "npm run dev" in the terminal.
+- To run the project in development then cd into reactapp and type "npm run dev" in the terminal.
 or
-- run "npm run build" to build the project and then run "npm start"
+- cd into reactapp run "npm run build" to build the project and then run "npm start"
 
 The project will run on http://localhost:3000
 
