@@ -1,5 +1,5 @@
 
-## Project Title
+## REST Countries API
 
 This application is connected to the Rest Countries API (https://restcountries.com/). On the Homepage there is a search component and a list of countries to choose from. The homepage provides you with a brief decription about each country including the countries name, population and an image of their flag. You can search for the country you are looking for in the search bar and you can load more results as you go down the page.
 
