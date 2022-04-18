@@ -42,6 +42,24 @@
     margin-bottom:5px;
 }
 
+.bordercountries{
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 40px;
+  }
+ .bordercountries h2{
+     font-size: 30px;
+     color: #3362B9;
+ }
+
+.borders{
+    display: inline-flex;
+    margin: 5px;
+    background-color: #F5811B;
+    padding:15px;
+    border-radius: 5px;
+}
 @media screen and (max-width: 830px) {
     .nameofcountry{
         font-size: 35px;

@@ -63,6 +63,12 @@
       background-position: -20px -20px;
     }
 
+    /*positioning for load more button*/
+    .loadmore{
+      margin-bottom:40px;
+    }
+
+   
     /*responsive styling for data returned on homepage*/
     @media screen and (max-width: 830px) {
 
@@ -80,6 +86,8 @@
       width:75%;
     }
     }
+
+
     
    
    

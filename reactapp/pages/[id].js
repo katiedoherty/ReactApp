@@ -3,13 +3,13 @@ import styles from '../styles/ReadMore.module.css'
 import Link from 'next/link';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-// import your icons
+import Error from './errorpage';
 import { faCircleLeft, faHighlighter } from '@fortawesome/free-solid-svg-icons';
 
-
+//this component returns the detailed information of a country when the user clicks ona country
 export default function CountryInfo({data}) {
- 
 
+if(data.length===1){
   return (
    <div >
      <div className={styles.backbutton}>
@@ -23,8 +23,6 @@ export default function CountryInfo({data}) {
       
       return(
         
-        
-      
         <div key={result.name.common}>
           
         <div className={styles.nameofcountry}> 
@@ -41,7 +39,7 @@ export default function CountryInfo({data}) {
         
        <p> <b>Population:</b> {result.population}</p>
         
-       <p> <b>Currency: </b>{Object.keys(result.currencies).map(k => result.currencies[k])
+       <p> <b>Currency: </b>{Object.keys(result.currencies).map(k => result?.currencies[k])
             .map(currency => Object.values(currency)[0])}
         </p>
         <p>
@@ -51,6 +49,12 @@ export default function CountryInfo({data}) {
         <b>Languages: </b>{Object.values(result.languages)+" "}<br/>
         </p>
         </div>
+        </div>
+        <div className={styles.bordercountries}>
+          <h2>Border Countries</h2><br/>
+          {result?.borders?.map(countries=>
+          <div key ={countries} className ={styles.borders}><b>{countries}</b></div>)}
+         
         </div>
          
          </div>
@@ -62,12 +66,25 @@ export default function CountryInfo({data}) {
    </div>
   )
 }
+else{
+  return <Error />
+}
+}
 
 
 export async function getServerSideProps(context) {
-    const name = context.query.id;
-  const res = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
-  const data = await res.json();
+  let data;
+  const name = context.query.id;
+    try{
+      
+      const res = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`);
+    
+      data = await res.json();
+    }catch(err){
+      console.log(err);
+      data=[];
+    }
+ 
   return{
     props:{data}
   }

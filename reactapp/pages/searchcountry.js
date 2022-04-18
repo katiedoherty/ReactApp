@@ -1,34 +1,13 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 
+//this is the component for the searchbar at the top of homepage.
+export default function SearchCountry(){
 
-export default function searchcountry({placeholder, data}){
-
-    const router = useRouter();
     const [searchcountry, setsearchcountry] = useState("");
-    const [errormessage, seterrormessage] = useState("");
-//function for when the user wants to search for a country.
-    const usersearch = (e) =>{
-  
-        e.preventDefault();
-        try {
-          router.push(`/${searchcountry}`)
-        }
-        catch(e) {
-          seterrormessage("There is no Country with that name")
-        }
-        
-        setsearchcountry("");
-      }
 
-      const Filterdata = (e)=>{
-        setsearchcountry(e.target.value)
-        //const newFilter = data.filter((value)=>{
-          //  return value.tit
-      //  })
-      }
-         //https://www.youtube.com/watch?v=x7niho285qs = filter serach
-    return(
+    return{
+      searchcountry,
+      render:(
         <div className="searchcountrycontainer">
             
              <form>
@@ -37,17 +16,17 @@ export default function searchcountry({placeholder, data}){
          <input
          type="text"
          name="search"
-         onChange={Filterdata}
+         onChange={(e) =>setsearchcountry(e.target.value)}
          value={searchcountry}
-         placeholder={placeholder}
+         placeholder="Search Country By Name"
          />
-          <button className="searchbutton" onClick={usersearch}>Search</button>
+         
      </div>
  
   
    
    </form>
         </div>
-    )
+    )}
    
 }

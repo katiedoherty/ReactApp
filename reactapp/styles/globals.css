@@ -15,7 +15,7 @@ a {
 * {
   box-sizing: border-box;
 }
-/*styles for header on both pages*/
+/*styles for header and search component*/
 h1, form{
   text-align: center;
   margin:0; padding:0;
