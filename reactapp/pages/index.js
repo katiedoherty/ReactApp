@@ -1,13 +1,13 @@
 
 import styles from'../styles/Home.module.css'
-import SearchCountry from './searchcountry'
+import SearchCountry from '../othercomponents/searchcountry'
 import dynamic from 'next/dynamic'
 
 export default function Home({data}) {
   //returns the input field, needed a way to pass user input from the child component to the parent
  const {render, searchcountry} = SearchCountry();
 
-  const Apidata = dynamic(() => import('./datafromapi'))
+  const Apidata = dynamic(() => import('../othercomponents/datafromapi'))
   return (
    <div className={styles.datareturned}>
 
